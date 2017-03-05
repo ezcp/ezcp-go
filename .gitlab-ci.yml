@@ -1,0 +1,32 @@
+image: golang:1.8
+
+stages:
+  - deploy
+
+variables:
+  GOSOURCES: "/go/src/github.com/ezcp-go"
+
+ezcp-go-deploy:
+  stage: deploy
+  script:
+    - mkdir -p $GOSOURCES
+    - cp -r . $GOSOURCES
+    - cd $GOSOURCES
+    - curl https://glide.sh/get | sh
+    - glide install
+    - GOOS=linux GOARCH=amd64 go build -o ezcp-linux
+    - GOOS=windows GOARCH=amd64 go build -o ezcp-windows
+    - GOOS=darwin GOARCH=amd64 go build -o ezcp-darwin
+    - mkdir -p ~/.ssh
+    - ssh-keygen -f "/root/.ssh/known_hosts" -R www.ezcp.io || true
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$EZCP_IO_SSHKEY")
+    - scp -C ezcp-* root@www.ezcp.io:~/bin/
+
+  environment:
+    name: binaries.ezcp.io
+    url: https://ezcp.io/
+  only:
+    - master

@@ -16,9 +16,9 @@ Some prefer a single binary compiled for their platform, others like Node.js bet
 
 ### You can install the following *Go* binaries
 
-- for linux, [https://get.ezcp.io/linux/ezcp](https://get.ezcp.io/linux/ezcp)
-- for osx, [https://get.ezcp.io/osx/ezcp](https://get.ezcp.io/osx/ezcp)
-- for windows, [https://get.ezcp.io/windows/ezcp](https://get.ezcp.io/windows/ezcp)
+- for linux, [https://ezcp.io/linux](https://ezcp.io/linux)
+- for osx, [https://ezcp.io/osx](https://ezcp.io/osx)
+- for windows, [https://ezcp.io/windows](https://ezcp.io/windows)
 
 Open the link in a navigator, or use `wget` or `curl`, then copy the file somewhere 
 in your path.
