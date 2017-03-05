@@ -35,14 +35,10 @@ Some prefer a single binary compiled for their platform, others like Node.js bet
 Open the link in a navigator, or use `wget` or `curl`, then copy the file somewhere 
 in your path.
 
-Or build it yourself (with the help of [https://glide.sh](glide)):
+Or build it yourself from the source:
 
 ```
-go get https://github.com/ezcp/ezcp-go
-curl https://glide.sh/get | sh
-cd $GOPATH/src/github.com/ezcp-go
-glide install
-go build
+go get github.com/ezcp/ezcp-go
 ```
 
 ### Or the Node.js version
