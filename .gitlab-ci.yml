@@ -4,7 +4,7 @@ stages:
   - deploy
 
 variables:
-  GOSOURCES: "/go/src/github.com/ezcp-go"
+  GOSOURCES: "/go/src/github.com/ezcp/ezcp-go"
 
 ezcp-go-deploy:
   stage: deploy

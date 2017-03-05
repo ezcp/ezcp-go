@@ -1,3 +1,15 @@
+```
+                     _       
+                    (_)      
+  ___ _______ _ __   _  ___  
+ / _ \_  / __| '_ \ | |/ _ \ 
+|  __// / (__| |_) || | (_) |
+ \___/___\___| .__(_)_|\___/ 
+             | |             
+             |_|             			
+
+```
+
 # What's EZCP
 
 *EZCP works like a clipboard*: you Copy something to it from machine A, and you Paste it on machine B.
@@ -22,6 +34,16 @@ Some prefer a single binary compiled for their platform, others like Node.js bet
 
 Open the link in a navigator, or use `wget` or `curl`, then copy the file somewhere 
 in your path.
+
+Or build it yourself (with the help of [https://glide.sh](glide)):
+
+```
+go get https://github.com/ezcp/ezcp-go
+curl https://glide.sh/get | sh
+cd $GOPATH/src/github.com/ezcp-go
+glide install
+go build
+```
 
 ### Or the Node.js version
 
