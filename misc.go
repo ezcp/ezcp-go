@@ -23,8 +23,8 @@ const (
 
 func showHelp() {
 	fmt.Println("  Premium usage:")
-	fmt.Println("    ezcp --bitcoin                   get address for paiement")
-	fmt.Println("    ezcp --login <transactionId>     retreive a token and store it")
+	fmt.Println("    ezcp -b                          get address for paiement")
+	fmt.Println("    ezcp -l <transactionId>          retreive a token and store it")
 	fmt.Println("    ezcp <filepath>                  if <filepath> exists, upload the file using the previously stored token")
 	fmt.Println("                                     if <filepath> doesn't exist, download the file pointed by previously stored token")
 

@@ -14,11 +14,11 @@ const (
 func main() {
 	log.SetFlags(log.LUTC | log.LstdFlags)
 
-	bitcoin := flag.Bool("bitcoin", false, "get a bitcoin address for registration")
+	bitcoin := flag.Bool("b", false, "get a bitcoin address for registration")
 	help := flag.Bool("help", false, "output usage information")
 	version := flag.Bool("version", false, "output the version number")
 	passphrase := flag.String("x", "", "encrypt / decrypt file")
-	login := flag.String("login", "", "register user and set a durable token")
+	login := flag.String("l", "", "register user and set a durable token")
 
 	flag.Parse()
 
