@@ -7,18 +7,25 @@ import (
 	"os"
 )
 
+const (
+	Version = "1.0.0"
+)
+
 func main() {
 	log.SetFlags(log.LUTC | log.LstdFlags)
 
 	bitcoin := flag.Bool("bitcoin", false, "get a bitcoin address for registration")
-	//passphrase := flag.String("x", "", "encrypt / decrypt file")
 	help := flag.Bool("help", false, "output usage information")
-	//version := flag.Bool("version", false, "output the version number")
+	version := flag.Bool("version", false, "output the version number")
 	passphrase := flag.String("x", "", "encrypt / decrypt file")
 	login := flag.String("login", "", "register user and set a durable token")
 
 	flag.Parse()
 
+	if *version {
+		fmt.Println("EZCP-go v" + Version)
+		return
+	}
 	if *help {
 		showHelp()
 		return
